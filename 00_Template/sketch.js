@@ -31,7 +31,7 @@ function draw() {
       let x = i * res;
       let y = j * res;
       stroke(0);
-      strokeWeight(1)
+      strokeWeight(1);
       fill(255);
       rect(x, y, res-1, res-1);
       }
