@@ -5,11 +5,11 @@ function make2DArray(cols, rows) {
   }
   return arr;
 }
-
+let arry = [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 255, 0, 255, 255, 0, 0, 255, 255, 255, 0, 255, 0,  255, 255, 0, 0, 0, 255, 255, 0, 255, 0, 255, 255, 0, 255, 0, 255, 255, 0, 255, 0, 255, 255, 0, 255, 0, 255, 255, 0, 255, 255, 255, 255, 0, 255, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255];
 let grid;
 let cols;
 let rows;
-let res = 4;
+let res = 40;
 
 function setup() {
   createCanvas(400,400);
@@ -25,19 +25,15 @@ function draw() {
     for (let j = 0; j < rows; j++) {
       let x = i * res;
       let y = j * res;
+      if (q > 100) {
+        q = 0;
+      }
+      filcol = arry[q]
       stroke(0);
       strokeWeight(1);
-      fill(255);
+      fill(filcol);
       rect(x, y, res-1, res-1);
+      q++;
       }
     }
   }
-  let next = make2DArray(cols, rows);
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      let sum = 0;
-      let state = grid[i][j];
-    }
-  }
-  grid = next;
-}
