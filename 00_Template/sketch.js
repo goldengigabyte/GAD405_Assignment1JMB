@@ -6,10 +6,15 @@ function make2DArray(cols, rows) {
   return arr;
 }
 
+let file = "";
 let grid;
 let cols;
 let rows;
 let res = 4;
+
+function preload(file){
+  let img = loadImage(file);
+}
 
 function setup() {
   createCanvas(400,400);
@@ -25,10 +30,9 @@ function draw() {
     for (let j = 0; j < rows; j++) {
       let x = i * res;
       let y = j * res;
-      if (grid[i][j] == 1){
-        stroke(0);
-        fill(0);
-        rect(x, y, res-1, res-1);
+      stroke(0);
+      fill(255);
+      rect(x, y, res-1, res-1);
       }
     }
   }
@@ -37,14 +41,6 @@ function draw() {
     for (let j = 0; j < rows; j++) {
       let sum = 0;
       let state = grid[i][j];
-      if (state == 0 && neighbors == 3) {
-        next[i][j] = 1;
-      } else if (state == 1 && (neighbors < 2 || neighbors > 3)){
-        next[i][j] = 0;
-      } else {
-        next[i][j] = state;
-      }
-
     }
   }
   grid = next;
