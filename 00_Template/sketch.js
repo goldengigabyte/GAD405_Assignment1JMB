@@ -6,15 +6,10 @@ function make2DArray(cols, rows) {
   return arr;
 }
 
-let file = "";
 let grid;
 let cols;
 let rows;
 let res = 4;
-
-function preload(file){
-  let img = loadImage(file);
-}
 
 function setup() {
   createCanvas(400,400);
