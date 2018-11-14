@@ -1,37 +1,37 @@
-var res = 25;var mini = res/2;var micro = mini/2;
+
 function setup(){
-  createCanvas(500,500);
-  frameRate(24);}
+  createCanvas(windowWidth, windowHeight);
+  //frameRate(24);
+}
 function draw() {
-  strokeWeight(2);
-  let r = int(random(255));
-  let g = int(random(255));
-  let b = int(random(255));
-  stroke(r,g,b);
-//main grid of swuares with mini squares
-  for (let i = 0; i<width/res; i++){
-    for (let j = 0; j<height/res; j++){
-      {
-        let r = int(random(255));
-        let b = int(random(255));
-        let g = int(random(255));
-        fill(r, g, b);
-        rect(res*i, res*j, res, res);
-      }
-      {
-        let r = int(random(255));
-        let b = int(random(255));
-        let g = int(random(255));
-        fill(r, g, b);
-        rect(res*i+micro, res*j+micro, mini, mini);
-      }
-    }
+  let pick = int(random(2));
+  y = int(random(height));
+  x = int(random(width));
+  noStroke();
+  if(pick==0){
+    circ();
+  }else if(pick==1){
+    tangles();
   }
 }
 function circ(){
+  let size = int(random(height/4));
   let r = int(random(255));
   let b = int(random(255));
   let g = int(random(255));
-  fill(r, g, b);
-  rect(res*i+micro, res*j+micro, mini, mini);
+  let a = int(random(255));
+  fill(r, g, b, a);
+  ellipse(x, y, size);
+}
+function tangles(){
+  let size = height/4;
+  let r = int(random(255));
+  let b = int(random(255));
+  let g = int(random(255));
+  let a = int(random(255));
+  fill(r, g, b, a);
+  rect(x, y, random(size), random(size),5);
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
