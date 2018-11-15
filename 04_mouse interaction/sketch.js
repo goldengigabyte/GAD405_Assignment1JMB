@@ -5,8 +5,6 @@ function setup(){
 }
 function draw() {
   let pick = int(random(2));
-  y = int(random(height));
-  x = int(random(width));
   noStroke();
   if(pick==0){
     circ();
@@ -16,21 +14,21 @@ function draw() {
 }
 function circ(){
   let size = int(random(height/4));
-  let r = int(random(256));
-  let b = int(random(256));
-  let g = int(random(256));
-  let a = int(random(256));
+  let r = int(random(255));
+  let b = int(random(255));
+  let g = int(random(255));
+  let a = int(random(255));
   fill(r, g, b, a);
-  ellipse(x, y, size);
+  ellipse(mouseX, mouseY, size);
 }
 function tangles(){
   let size = height/4;
-  let r = int(random(256));
-  let b = int(random(256));
-  let g = int(random(256));
-  let a = int(random(256));
+  let r = int(random(255));
+  let b = int(random(255));
+  let g = int(random(255));
+  let a = int(random(255));
   fill(r, g, b, a);
-  rect(x, y, random(size), random(size),5);
+  rect(mouseX, mouseY, random(size), random(size),5);
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

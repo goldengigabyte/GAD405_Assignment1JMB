@@ -7,7 +7,7 @@ function setup(){
   fR=frameRate();
   x = width/2;
   y = height/2;
-  diffY = 12;
+  diffY = 9.8;
   diffX = width/9;
   textFont(font);
   textSize(diffX);
@@ -15,8 +15,7 @@ function setup(){
 }
 function draw() {
   count++
-  rectMode(CORNER);
-  strokeWeight(0);
+  background(255);
   fill(255);
   rect(0, 0, width, height);
   rectMode(CENTER);
@@ -27,7 +26,7 @@ function draw() {
     y = 0;
   }
   if(count>fR){
-    diffY = diffY + 12;
+    diffY = diffY + 9.8;
     count = 0;
     if(diffY> height){
       diffY = 0;
