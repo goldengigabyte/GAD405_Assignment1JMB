@@ -15,9 +15,8 @@ function setup(){
 }
 function draw() {
   count++
-  background(255);
+  background(25);
   fill(255);
-  rect(0, 0, width, height);
   rectMode(CENTER);
   strokeWeight(1);
   y = y + diffY;
@@ -29,7 +28,7 @@ function draw() {
     diffY = diffY + 9.8;
     count = 0;
     if(diffY> height){
-      diffY = 0;
+      diffY = diffY/2;
     }
   }
 
