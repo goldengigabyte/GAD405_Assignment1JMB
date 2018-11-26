@@ -41,7 +41,7 @@ function draw() {
     setinterval(fresh(),24000);
     //an if to reset the y and diffY variables
     if(y > height){
-      y = 0;
+      diffY = diffY - (diffY*1.3);
     }else if(diffY>height){
       diffY = 9.8;
     }
