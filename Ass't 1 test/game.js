@@ -16,7 +16,7 @@ function setup(){
   let canvas = createCanvas(600, 600);
   diffX = width/9;
   y = height/2;
-  canvas.parent('Holder');
+  //canvas.parent('Holder');
   frameRate(fR);
   textFont(font);
   textSize(diffX);
