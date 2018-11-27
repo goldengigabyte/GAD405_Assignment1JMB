@@ -1,8 +1,8 @@
 //variable soup
 let flags = false; //flags variable for when user clicks
-let r;
-let g;
-let b;
+let r=33;
+let g=33;
+let b=33;
 let diffY = 9.8;
 let fR = 60;
 let st_col = 127;
@@ -15,8 +15,8 @@ function setup(){
   background(127);
   let canvas = createCanvas(600, 600);
   diffX = width/9;
-  y = height/2;
-  canvas.parent('Holder');
+  y = 0;
+  //canvas.parent('Holder');
   frameRate(fR);
   textFont(font);
   textSize(diffX);
@@ -29,6 +29,7 @@ function draw() {
   strokeWeight(1);
   //select between the different screens
   //namely the starting screen, and final screens
+  dcel = diffY * 1.7;//this sets the
   if (flags == true){
     //text changes to thanks and starts falling
     background(r, g, b, 63.5);
@@ -40,10 +41,10 @@ function draw() {
     nY = y;
     //an if to reset the y and diffY variables
     if(y > height-diffX){
-      diffY = diffY - (diffY*1.3);
+      diffY = diffY - dcel;
     }
     //increment diffY by 9.8 every second
-    diffY = diffY + 0.1633;
+    diffY = diffY + 0.17;
   }else{
     background(r, g, b);
     text('Click here',width/2, height/2);
@@ -59,6 +60,7 @@ function draw() {
 
 function mousePressed(){
   flags = true;
+  clear();
 }
 
 function keyPressed(){
