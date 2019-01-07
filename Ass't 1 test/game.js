@@ -21,7 +21,7 @@ function setup(){
   textFont(font);
   textSize(diffX);
   textAlign(CENTER, CENTER);
-  st_col = 127
+  st_col = 127;
 }
 function draw() {
   fill(255);
